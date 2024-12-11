@@ -24,7 +24,7 @@ Predict the CO2 emission of a car where the weight is 2300kg, and the volume is 
 Print the predicted output.
 
 ## Program:
-```
+``` python
 import pandas as pd
 from sklearn import linear_model
 df = pd.read_csv("carsemission.csv")
@@ -33,20 +33,17 @@ y = df['CO2']
 regr = linear_model.LinearRegression()
 regr.fit(X, y)
 print('Coefficients:', regr.coef_)
-print('Intercept:',regr.intercept_)
-predictedCO2 = regr.predict([[3300, 1300]])
-print('Predicted CO2 for the corresponding weight and volume',predictedCO2)
-
-
-
-
+print('Intercept:', regr.intercept_)
+input_data = pd.DataFrame({'Weight': [3300], 'Volume': [1300]})
+predictedCO2 = regr.predict(input_data)
+print('Predicted CO2 for the corresponding weight and volume:', predictedCO2)
 
 ```
 ## Output:
 
 ### Insert your output
 
-![image](https://github.com/user-attachments/assets/84134953-48b7-4a3a-a38a-ca4ab94da9fb)
+![image](https://github.com/user-attachments/assets/a0b5e0ab-8595-417e-8a03-f1e755ed31dc)
 
 
 ## Result
